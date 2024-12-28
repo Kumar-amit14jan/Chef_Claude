@@ -1,0 +1,45 @@
+.header-Content {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.heading {
+  font-size: 2.5rem;
+}
+.logo {
+  height: 55px;
+  margin: 2px;
+}
+body {
+  background-color: #fafaf8;
+}
+
+.add-ingredient {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 2rem;
+  height: 50px;
+}
+
+main {
+  padding: 10px 3px;
+}
+
+.add-ingredient > input {
+  border-radius: 6px;
+  padding: 9px 13px;
+  border: 1px solid #d1d5db;
+  flex-grow: 1;
+  min-width: 200px;
+  max-width: 780px;
+}
+
+.add-ingredient > button {
+  border-radius: 6px;
+  border: none;
+  background-color: #141413;
+  color: whitesmoke;
+}

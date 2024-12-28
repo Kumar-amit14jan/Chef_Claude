@@ -1,6 +1,7 @@
 import "./styles.css";
+import { useState } from "react";
 export function Main() {
-  const ingredients = ["chicken", "pepper", "Tomato"];
+  const [ingredients, setIngredients] = useState([]);
   const ingredientsList = ingredients.map((ingredient) => {
     return <li key={ingredient}>{ingredient}</li>;
   });
@@ -11,7 +12,7 @@ export function Main() {
     const formData = new FormData(event.currentTarget);
     const newIngredient = formData.get("ingredient");
     console.log(newIngredient);
-    ingredients.push(newIngredient);
+    setIngredients((data) => [...data, newIngredient]);
   }
   return (
     <>

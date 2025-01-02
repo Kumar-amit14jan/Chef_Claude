@@ -6,10 +6,7 @@ export function Main() {
     return <li key={ingredient}>{ingredient}</li>;
   });
 
-  function submitDetails(event) {
-    event.preventDefault();
-    console.log("submit details of ingeridents");
-    const formData = new FormData(event.currentTarget);
+  function submitDetails(formData) {
     const newIngredient = formData.get("ingredient");
     console.log(newIngredient);
     setIngredients((data) => [...data, newIngredient]);
@@ -17,7 +14,7 @@ export function Main() {
   return (
     <>
       <main>
-        <form className="add-ingredient" onSubmit={submitDetails}>
+        <form className="add-ingredient" action={submitDetails}>
           <input
             type="text"
             name="ingredient"

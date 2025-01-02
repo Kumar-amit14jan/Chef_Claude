@@ -8,7 +8,6 @@ export function Main() {
 
   function submitDetails(formData) {
     const newIngredient = formData.get("ingredient");
-    console.log(newIngredient);
     setIngredients((data) => [...data, newIngredient]);
   }
   return (

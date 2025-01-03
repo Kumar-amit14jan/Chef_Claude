@@ -1,7 +1,10 @@
 import "./styles.css";
 import { useState } from "react";
+import { ClaudRecipe } from "./claudRecipe";
+import { Ingredients } from "./ingredients";
 export function Main() {
   const [ingredients, setIngredients] = useState([]);
+  const [recipe, setRecipe] = useState(false);
   const ingredientsList = ingredients.map((ingredient) => {
     return <li key={ingredient}>{ingredient}</li>;
   });
@@ -9,6 +12,9 @@ export function Main() {
   function submitDetails(formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients((data) => [...data, newIngredient]);
+  }
+  function getRecipe() {
+    setRecipe((prev) => !prev);
   }
   return (
     <>
@@ -22,8 +28,13 @@ export function Main() {
           />
           <button type="submit">+ Add ingredient</button>
         </form>
+        <Ingredients
+          ingredientsList={ingredientsList}
+          ingredients={ingredients}
+          handleRecipe={getRecipe}
+        />
+        {recipe ? <ClaudRecipe /> : null}
       </main>
-      <ul>{ingredientsList}</ul>
     </>
   );
 }
